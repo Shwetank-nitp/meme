@@ -1,7 +1,8 @@
 function isThala(str) {
-  if (str.lenght === 7 || str === "7") {
+  if (str.length === 7 || str === "7") {
     return true;
   }
+  return false;
 }
 
 var audio = document.getElementById("bg-song");
@@ -21,7 +22,6 @@ document.querySelector(".btn").addEventListener("click", () => {
   } else {
     audio.setAttribute("src", "./0.mp3");
     audio.play();
-    document.getElementById("song").setAttribute("src", "./0.mp3").play();
     document.getElementById("para").innerText = "No thala for you";
     document.querySelector(".img").setAttribute("src", "./0.gif");
     document.querySelector(".pop-up").setAttribute("style", "display: flex");
