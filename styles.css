@@ -16,9 +16,11 @@
   justify-content: center;
   position: relative;
 }
-.header {
-  font-size: 1.25rem;
-  font-weight: 100;
+.header > h1 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-decoration: underline;
+  text-transform: capitalize;
 }
 .input {
   width: 14rem;
