@@ -6,6 +6,7 @@ function isThala(str) {
   let ditch1 = /^[\/*]/;
   let ditch2 = /[\/*]$/;
   let arr = str.match(arthem);
+  if(arr===null) return false;
   for (let a of arr) {
     let sum = 0;
     if (!ditch1.test(a) && !ditch2.test(a)) {
