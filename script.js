@@ -1,6 +1,31 @@
 function isThala(str) {
-  if (str.length === 7 || str === "7") {
+  if (str.length === 7) {
     return true;
+  }
+  let arthem = /[\d\s\/*+\-.]+/;
+  let ditch1 = /^[\/*]/;
+  let ditch2 = /[\/*]$/;
+  let arr = str.match(arthem);
+  for (let a of arr) {
+    let sum = 0;
+    if (!ditch1.test(a) && !ditch2.test(a)) {
+      let expression = a.split(/\s*([\+\-\*\/])\s*/).filter(Boolean);
+      sum = parseFloat(expression[0]);
+      for (let i = 1; i < expression.length; i += 2) {
+        if (expression[i] === "/") {
+          sum /= parseFloat(expression[i + 1]);
+        } else if (expression[i] === "*") {
+          sum *= parseFloat(expression[i + 1]);
+        } else if (expression[i] === "+") {
+          sum += parseFloat(expression[i + 1]);
+        } else {
+          sum -= parseFloat(expression[i + 1]);
+        }
+      }
+      if (sum === 7) {
+        return true;
+      }
+    }
   }
   return false;
 }
